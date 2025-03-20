@@ -1,9 +1,16 @@
 /**
  * @format
  */
-
-import { AppRegistry } from 'react-native';
+import 'setimmediate';
+import React from 'react';
+import { AppRegistry, StatusBar } from 'react-native';
 import App from './App';
-import { name as appName } from './app.json';
 
-AppRegistry.registerComponent(appName, () => App);
+const Main = () => (
+  <>
+    <StatusBar hidden={true} />
+    <App />
+  </>
+);
+
+AppRegistry.registerComponent('main', () => Main);
